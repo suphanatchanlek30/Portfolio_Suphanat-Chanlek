@@ -1,9 +1,11 @@
-import Image from "next/image";
+// app/page.tsx
+
+import Navbar from "@/components/layout/Navbar";
 
 export default function Home() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Portfolio</h1>
-    </div>
+    <main className="min-h-screen bg-background text-foreground">
+      <Navbar />
+    </main>
   );
 }
