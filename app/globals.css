@@ -3,13 +3,40 @@
 @import "tailwindcss";
 
 :root {
+  /* Base colors */
   --background: #000000;
   --foreground: #ffffff;
+
+  /* Navbar colors */
+  --navbar-bg: #000000;
+  --navbar-text: #ffffff;
+  --navbar-border: rgba(255, 255, 255, 0.1);
+  --navbar-link: rgba(255, 255, 255, 0.7);
+  --navbar-link-hover: #ffffff;
+  --navbar-link-mobile: rgba(255, 255, 255, 0.75);
+
+  /* Button colors */
+  --btn-social-bg: #ffffff;
+  --btn-social-text: #000000;
+  --btn-social-hover-bg: #e5e7eb;
+  --btn-toggle-border: rgba(255, 255, 255, 0.1);
+  --btn-toggle-hover-bg: rgba(255, 255, 255, 0.1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-navbar-bg: var(--navbar-bg);
+  --color-navbar-text: var(--navbar-text);
+  --color-navbar-border: var(--navbar-border);
+  --color-navbar-link: var(--navbar-link);
+  --color-navbar-link-hover: var(--navbar-link-hover);
+  --color-navbar-link-mobile: var(--navbar-link-mobile);
+  --color-btn-social-bg: var(--btn-social-bg);
+  --color-btn-social-text: var(--btn-social-text);
+  --color-btn-social-hover-bg: var(--btn-social-hover-bg);
+  --color-btn-toggle-border: var(--btn-toggle-border);
+  --color-btn-toggle-hover-bg: var(--btn-toggle-hover-bg);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
