@@ -15,8 +15,8 @@ const Hero3DScene = dynamic(
 
 /**
  * Full-screen hero section.
- * Layout: 3D object absolute-positioned on left, text content on the right.
- * Overflow hidden prevents anything from spilling out.
+ * Mobile: no 3D, text starts from top
+ * Desktop: 3D absolute left, text right
  */
 export default function HeroSection() {
   return (
@@ -27,13 +27,13 @@ export default function HeroSection() {
       {/* Background grid decoration */}
       <HeroBackground />
 
-      {/* 3D floating object — large container so object never clips edges */}
-      <div className="pointer-events-none absolute inset-y-0 left-[2%] hidden w-[45%] items-center justify-center md:flex lg:left-[5%]">
+      {/* Desktop: 3D absolute positioned left */}
+      <div className="pointer-events-none absolute inset-y-0 left-[2%] hidden w-[38%] items-center justify-center md:flex lg:left-[5%] lg:w-[42%]">
         <Hero3DScene />
       </div>
 
-      {/* Main content — pushed to the right side */}
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-60px)] w-full max-w-7xl items-center px-6 py-20 sm:px-8 md:justify-end md:py-24 lg:px-12">
+      {/* Main content wrapper */}
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-60px)] w-full max-w-7xl items-start justify-center px-6 pt-28 pb-16 sm:px-8 md:items-center md:justify-end md:px-8 md:py-20 lg:px-12 lg:py-24">
         <div className="w-full md:w-[55%] lg:w-[50%]">
           <HeroContent />
         </div>
