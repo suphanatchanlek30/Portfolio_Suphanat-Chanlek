@@ -2,23 +2,23 @@
 
 "use client";
 
-import { useRef } from "react";
+import { useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float } from "@react-three/drei";
+import { Float, MeshDistortMaterial, Environment } from "@react-three/drei";
 import type { Mesh } from "three";
-import * as THREE from "three";
 
 /**
- * Metallic torus knot — small enough to never clip container edges during rotation.
- * Light gray/white color scheme.
+ * Chrome/mirror-like distorted sphere.
+ * High metalness + low roughness + Environment map = chrome reflections
+ * with white, gray, and black tones (like the reference image).
  */
-function MetallicObject() {
+function ChromeObject() {
   const meshRef = useRef<Mesh>(null);
 
   useFrame((_, delta) => {
     if (meshRef.current) {
-      meshRef.current.rotation.y += delta * 0.15;
-      meshRef.current.rotation.x += delta * 0.08;
+      meshRef.current.rotation.y += delta * 0.2;
+      meshRef.current.rotation.x += delta * 0.1;
     }
   });
 
@@ -30,12 +30,14 @@ function MetallicObject() {
       floatingRange={[-0.03, 0.03]}
     >
       <mesh ref={meshRef} scale={0.55}>
-        <torusKnotGeometry args={[1, 0.28, 200, 32, 2, 3]} />
-        <meshStandardMaterial
-          color="#e0e0e0"
+        <torusKnotGeometry args={[1, 0.3, 256, 64, 2, 3]} />
+        <MeshDistortMaterial
+          color="#ffffff"
           metalness={1}
-          roughness={0.05}
-          side={THREE.DoubleSide}
+          roughness={0}
+          distort={0.25}
+          speed={1.5}
+          envMapIntensity={3}
         />
       </mesh>
     </Float>
@@ -44,35 +46,25 @@ function MetallicObject() {
 
 /**
  * 3D canvas scene.
- * Camera pulled far back + small object = plenty of room to rotate without hitting edges.
+ * Environment "studio" gives clean white/gray/black reflections (chrome look).
+ * Wrapped in Suspense with null fallback to prevent white flash.
  */
 export default function Hero3DScene() {
   return (
     <Canvas
       camera={{ position: [0, 0, 9], fov: 25 }}
-      gl={{ alpha: true, antialias: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.3 }}
+      gl={{ alpha: true, antialias: true }}
       style={{ background: "transparent" }}
     >
-      {/* Key light — bright white */}
-      <directionalLight position={[4, 5, 5]} intensity={3} color="#ffffff" />
+      <Suspense fallback={null}>
+        {/* "studio" preset gives neutral white/gray/black reflections — no warm tints */}
+        <Environment preset="studio" background={false} />
+      </Suspense>
 
-      {/* Fill light — soft light gray */}
-      <directionalLight position={[-4, 2, 3]} intensity={1.5} color="#e0e0e0" />
+      <ambientLight intensity={0.2} />
+      <directionalLight position={[5, 5, 5]} intensity={1} color="#ffffff" />
 
-      {/* Rim light — edge highlight */}
-      <directionalLight position={[0, 3, -4]} intensity={1.2} color="#ffffff" />
-
-      {/* Bottom fill */}
-      <directionalLight position={[0, -5, 2]} intensity={0.6} color="#b0b0b0" />
-
-      {/* Point lights for specular spots */}
-      <pointLight position={[3, 2, 4]} intensity={2} color="#ffffff" distance={15} />
-      <pointLight position={[-3, -1, 3]} intensity={1.2} color="#e0e0e0" distance={12} />
-
-      {/* Ambient */}
-      <ambientLight intensity={0.5} color="#ffffff" />
-
-      <MetallicObject />
+      <ChromeObject />
     </Canvas>
   );
 }
