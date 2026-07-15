@@ -21,6 +21,18 @@
   --btn-social-hover-bg: #e5e7eb;
   --btn-toggle-border: rgba(255, 255, 255, 0.1);
   --btn-toggle-hover-bg: rgba(255, 255, 255, 0.1);
+
+  /* Hero section colors */
+  --hero-title: #ffffff;
+  --hero-subtitle: rgba(255, 255, 255, 0.55);
+  --hero-role-label: rgba(255, 255, 255, 0.4);
+  --hero-grid-line: rgba(255, 255, 255, 0.06);
+  --hero-grid-dot: rgba(255, 255, 255, 0.15);
+  --hero-btn-bg: #ffffff;
+  --hero-btn-text: #000000;
+  --hero-btn-hover-bg: rgba(255, 255, 255, 0.9);
+  --hero-gradient-start: #0a0a0a;
+  --hero-gradient-end: #000000;
 }
 
 @theme inline {
@@ -37,6 +49,16 @@
   --color-btn-social-hover-bg: var(--btn-social-hover-bg);
   --color-btn-toggle-border: var(--btn-toggle-border);
   --color-btn-toggle-hover-bg: var(--btn-toggle-hover-bg);
+  --color-hero-title: var(--hero-title);
+  --color-hero-subtitle: var(--hero-subtitle);
+  --color-hero-role-label: var(--hero-role-label);
+  --color-hero-grid-line: var(--hero-grid-line);
+  --color-hero-grid-dot: var(--hero-grid-dot);
+  --color-hero-btn-bg: var(--hero-btn-bg);
+  --color-hero-btn-text: var(--hero-btn-text);
+  --color-hero-btn-hover-bg: var(--hero-btn-hover-bg);
+  --color-hero-gradient-start: var(--hero-gradient-start);
+  --color-hero-gradient-end: var(--hero-gradient-end);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
