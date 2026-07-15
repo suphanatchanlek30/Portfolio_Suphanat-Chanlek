@@ -32,9 +32,9 @@ function MetallicObject() {
       <mesh ref={meshRef} scale={0.55}>
         <torusKnotGeometry args={[1, 0.28, 200, 32, 2, 3]} />
         <meshStandardMaterial
-          color="#d4d4d4"
+          color="#e0e0e0"
           metalness={1}
-          roughness={0.08}
+          roughness={0.05}
           side={THREE.DoubleSide}
         />
       </mesh>

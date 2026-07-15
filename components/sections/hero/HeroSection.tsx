@@ -28,7 +28,7 @@ export default function HeroSection() {
       <HeroBackground />
 
       {/* 3D floating object — large container so object never clips edges */}
-      <div className="pointer-events-none absolute inset-y-0 -left-[5%] hidden w-[45%] items-center justify-center md:flex">
+      <div className="pointer-events-none absolute inset-y-0 left-[2%] hidden w-[45%] items-center justify-center md:flex lg:left-[5%]">
         <Hero3DScene />
       </div>
 
