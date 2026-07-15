@@ -6,31 +6,32 @@
 
 ```text
 app/
-	layout.tsx
-	page.tsx
-	globals.css
+	layout.tsx          # Root layout (fonts, metadata)
+	page.tsx            # Home page
+	globals.css         # CSS variables & Tailwind theme config
 components/
 	layout/
-		Navbar.tsx
+		Navbar.tsx          # Main navbar (orchestrates sub-components)
 		navbar/
-			MenuToggleButton.tsx
-			NavLinkList.tsx
+			MenuToggleButton.tsx   # Mobile hamburger/close button
+			NavLinkList.tsx        # Reusable navigation link list
+			SocialLinkButton.tsx   # Reusable social icon button
 data/
-	navigation.ts
+	navigation.ts       # Navigation data (links, social URLs, SVG paths)
 lib/
-	cn.ts
+	classNames.ts       # className utility (conditional class joining)
 types/
-	navigation.ts
+	navigation.ts       # Shared TypeScript types
 public/
 ```
 
-## Navbar Structure
+## Architecture Conventions
 
-- `components/layout/Navbar.tsx` คือไฟล์หลักของ navbar
-- `components/layout/navbar/MenuToggleButton.tsx` สำหรับปุ่มเปิด/ปิดบน mobile
-- `components/layout/navbar/NavLinkList.tsx` สำหรับ render รายการลิงก์
-- `data/navigation.ts` เก็บข้อมูลลิงก์และ social icons
-- `types/navigation.ts` เก็บ type ที่ใช้ร่วมกัน
+- **Colors** — ทุกสีกำหนดไว้ใน `app/globals.css` เป็น CSS variables แล้วใช้ผ่าน Tailwind (`bg-navbar-bg`, `text-navbar-link` ฯลฯ)
+- **Data ≠ Styling** — ไฟล์ใน `data/` เก็บแค่ข้อมูล (label, href, svgPath) ไม่มี className
+- **Types** — เก็บ type ที่ใช้ร่วมกันใน `types/` ไม่มี styling properties
+- **Components** — ใช้ `cn()` utility สำหรับ conditional classes, รับ `className` prop เพื่อ flexibility
+- **Accessibility** — ใช้ semantic HTML (`<nav>`, `<header>`), aria-label, aria-expanded
 
 ## Tech Stack
 
