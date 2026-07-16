@@ -35,8 +35,11 @@ const itemVariants = {
 
 /**
  * Hero text content with staggered reveal animations.
- * Portrait (mobile & iPad): centered, scaled up for tablet to fill tall screen
- * Landscape tablet/desktop (landscape-lg): left-aligned on right side
+ * Clear typography hierarchy: small label → big bold title → medium subtitle → CTA
+ *
+ * Mobile (default): compact but readable, top-down flow
+ * Tablet portrait (md/lg): scaled up proportionally to fill tall screen
+ * Landscape/Desktop (landscape-lg): left-aligned, desktop proportions
  */
 export default function HeroContent() {
   return (
@@ -46,33 +49,33 @@ export default function HeroContent() {
       initial="hidden"
       animate="visible"
     >
-      {/* Role label */}
+      {/* Role label — small, uppercase, subtle */}
       <motion.span
-        className="mb-5 text-[11px] font-semibold uppercase tracking-[0.2em] text-hero-role-label sm:text-xs md:mb-7 md:text-sm md:tracking-[0.25em] lg:mb-8 lg:text-base lg:tracking-[0.3em] landscape-lg:mb-5 landscape-lg:text-sm landscape-lg:tracking-[0.25em]"
+        className="mb-4 text-[10px] font-semibold uppercase tracking-[0.25em] text-hero-role-label sm:mb-5 sm:text-xs sm:tracking-[0.3em] md:mb-6 md:text-sm md:tracking-[0.3em] lg:mb-7 lg:text-base landscape-lg:mb-5 landscape-lg:text-xs landscape-lg:tracking-[0.25em]"
         variants={itemVariants}
       >
         {heroContent.roleLabel}
       </motion.span>
 
-      {/* Title */}
+      {/* Title — bold, dominant, eye-catching */}
       <motion.h1
-        className="mb-5 text-[32px] font-bold leading-[1.1] tracking-tight text-hero-title sm:text-4xl md:mb-7 md:text-6xl lg:mb-8 lg:text-7xl landscape-lg:mb-5 landscape-lg:text-5xl xl:text-6xl"
+        className="mb-4 text-4xl font-bold leading-[1.05] tracking-tight text-hero-title sm:mb-5 sm:text-5xl md:mb-6 md:text-7xl lg:mb-8 lg:text-8xl landscape-lg:mb-5 landscape-lg:text-5xl xl:text-6xl"
         variants={itemVariants}
       >
         {heroContent.title}
       </motion.h1>
 
-      {/* Subtitle */}
+      {/* Subtitle — lighter weight, readable, good line height */}
       <motion.p
-        className="mb-8 max-w-[300px] text-[13px] font-light leading-[1.8] text-hero-subtitle sm:max-w-sm sm:text-sm md:mb-10 md:max-w-lg md:text-lg md:leading-relaxed lg:mb-12 lg:max-w-xl lg:text-xl lg:leading-relaxed landscape-lg:mb-8 landscape-lg:max-w-xl landscape-lg:text-base landscape-lg:leading-relaxed xl:text-lg"
+        className="mb-8 max-w-[280px] text-sm font-light leading-[1.7] text-hero-subtitle sm:mb-9 sm:max-w-sm sm:text-base sm:leading-[1.8] md:mb-10 md:max-w-md md:text-lg md:leading-[1.8] lg:mb-12 lg:max-w-lg lg:text-xl lg:leading-[1.8] landscape-lg:mb-8 landscape-lg:max-w-md landscape-lg:text-sm landscape-lg:leading-relaxed xl:max-w-xl xl:text-base"
         variants={itemVariants}
       >
         {heroContent.subtitle}
       </motion.p>
 
-      {/* CTA Button */}
+      {/* CTA Button — proportional to surrounding text */}
       <motion.div variants={itemVariants}>
-        <DownloadCvButton className="md:px-8 md:py-3.5 md:text-base lg:px-10 lg:py-4 lg:text-lg landscape-lg:px-7 landscape-lg:py-3 landscape-lg:text-sm" />
+        <DownloadCvButton className="px-6 py-3 text-sm sm:px-7 sm:py-3 sm:text-base md:px-9 md:py-4 md:text-lg lg:px-10 lg:py-4 lg:text-xl landscape-lg:px-7 landscape-lg:py-3 landscape-lg:text-sm" />
       </motion.div>
     </motion.div>
   );

@@ -33,8 +33,8 @@ export default function HeroSection() {
       </div>
 
       {/* Main content wrapper */}
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-60px)] w-full max-w-7xl items-center justify-center px-6 pt-20 pb-16 sm:px-8 md:px-16 lg:px-20 landscape-lg:justify-end landscape-lg:px-12 landscape-lg:py-24">
-        <div className="w-full max-w-lg md:max-w-2xl lg:max-w-3xl landscape-lg:max-w-none landscape-lg:w-[50%] pl-5">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-60px)] w-full max-w-7xl items-start justify-center px-6 pt-28 pb-16 sm:px-8 sm:pt-32 md:items-center md:px-16 md:pt-20 lg:px-20 landscape-lg:justify-end landscape-lg:px-12 landscape-lg:py-24">
+        <div className="w-full max-w-lg md:max-w-2xl lg:max-w-3xl landscape-lg:max-w-none landscape-lg:w-[50%]">
           <HeroContent />
         </div>
       </div>
