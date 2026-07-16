@@ -15,8 +15,8 @@ const Hero3DScene = dynamic(
 
 /**
  * Full-screen hero section.
- * Mobile: no 3D, text starts from top
- * Desktop: 3D absolute left, text right
+ * Portrait (all iPads & mobile): no 3D, centered text filling the screen
+ * Landscape tablet & desktop (≥1024px + landscape): 3D left, text right
  */
 export default function HeroSection() {
   return (
@@ -27,14 +27,14 @@ export default function HeroSection() {
       {/* Background grid decoration */}
       <HeroBackground />
 
-      {/* Desktop: 3D absolute positioned left */}
-      <div className="pointer-events-none absolute inset-y-0 left-[2%] hidden w-[38%] items-center justify-center md:flex lg:left-[5%] lg:w-[42%]">
+      {/* 3D scene — only visible in landscape ≥1024px */}
+      <div className="pointer-events-none absolute inset-y-0 left-[5%] hidden w-[42%] items-center justify-center landscape-lg:flex">
         <Hero3DScene />
       </div>
 
       {/* Main content wrapper */}
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-60px)] w-full max-w-7xl items-start justify-center px-6 pt-28 pb-16 sm:px-8 md:items-center md:justify-end md:px-8 md:py-20 lg:px-12 lg:py-24">
-        <div className="w-full md:w-[55%] lg:w-[50%]">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-60px)] w-full max-w-7xl items-center justify-center px-6 pt-20 pb-16 sm:px-8 md:px-16 lg:px-20 landscape-lg:justify-end landscape-lg:px-12 landscape-lg:py-24">
+        <div className="w-full max-w-lg md:max-w-2xl lg:max-w-3xl landscape-lg:max-w-none landscape-lg:w-[50%] pl-5">
           <HeroContent />
         </div>
       </div>

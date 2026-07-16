@@ -35,20 +35,20 @@ const itemVariants = {
 
 /**
  * Hero text content with staggered reveal animations.
- * Mobile: left-aligned, top-down flow
- * Desktop: left-aligned on right side
+ * Portrait (mobile & iPad): centered, scaled up for tablet to fill tall screen
+ * Landscape tablet/desktop (landscape-lg): left-aligned on right side
  */
 export default function HeroContent() {
   return (
     <motion.div
-      className="flex flex-col items-center text-center md:items-start md:text-left"
+      className="flex flex-col items-center text-center landscape-lg:items-start landscape-lg:text-left"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
       {/* Role label */}
       <motion.span
-        className="mb-5 text-[11px] font-semibold uppercase tracking-[0.2em] text-hero-role-label sm:text-xs md:mb-5 md:text-xs md:tracking-[0.2em] lg:text-sm lg:tracking-[0.25em]"
+        className="mb-5 text-[11px] font-semibold uppercase tracking-[0.2em] text-hero-role-label sm:text-xs md:mb-7 md:text-sm md:tracking-[0.25em] lg:mb-8 lg:text-base lg:tracking-[0.3em] landscape-lg:mb-5 landscape-lg:text-sm landscape-lg:tracking-[0.25em]"
         variants={itemVariants}
       >
         {heroContent.roleLabel}
@@ -56,7 +56,7 @@ export default function HeroContent() {
 
       {/* Title */}
       <motion.h1
-        className="mb-5 text-[32px] font-bold leading-[1.1] tracking-tight text-hero-title sm:text-4xl md:mb-5 md:text-4xl lg:text-5xl xl:text-6xl"
+        className="mb-5 text-[32px] font-bold leading-[1.1] tracking-tight text-hero-title sm:text-4xl md:mb-7 md:text-6xl lg:mb-8 lg:text-7xl landscape-lg:mb-5 landscape-lg:text-5xl xl:text-6xl"
         variants={itemVariants}
       >
         {heroContent.title}
@@ -64,7 +64,7 @@ export default function HeroContent() {
 
       {/* Subtitle */}
       <motion.p
-        className="mb-8 max-w-[300px] text-[13px] font-light leading-[1.8] text-hero-subtitle sm:max-w-sm sm:text-sm md:mb-8 md:max-w-sm md:text-sm md:leading-relaxed lg:max-w-xl lg:text-base xl:text-lg"
+        className="mb-8 max-w-[300px] text-[13px] font-light leading-[1.8] text-hero-subtitle sm:max-w-sm sm:text-sm md:mb-10 md:max-w-lg md:text-lg md:leading-relaxed lg:mb-12 lg:max-w-xl lg:text-xl lg:leading-relaxed landscape-lg:mb-8 landscape-lg:max-w-xl landscape-lg:text-base landscape-lg:leading-relaxed xl:text-lg"
         variants={itemVariants}
       >
         {heroContent.subtitle}
@@ -72,7 +72,7 @@ export default function HeroContent() {
 
       {/* CTA Button */}
       <motion.div variants={itemVariants}>
-        <DownloadCvButton />
+        <DownloadCvButton className="md:px-8 md:py-3.5 md:text-base lg:px-10 lg:py-4 lg:text-lg landscape-lg:px-7 landscape-lg:py-3 landscape-lg:text-sm" />
       </motion.div>
     </motion.div>
   );

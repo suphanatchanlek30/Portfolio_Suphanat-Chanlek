@@ -2,6 +2,9 @@
 
 @import "tailwindcss";
 
+/* Custom variant: landscape tablet/desktop (min-width: 1024px AND landscape orientation) */
+@custom-variant landscape-lg (@media (min-width: 1024px) and (orientation: landscape));
+
 :root {
   /* Base colors */
   --background: #000000;
