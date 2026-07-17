@@ -46,10 +46,35 @@ export default function AboutTimeline({ className }: AboutTimelineProps) {
       {/* Bio */}
       <motion.p
         variants={itemVariants}
-        className="mb-10 max-w-lg text-sm leading-relaxed text-about-text sm:text-[15px]"
+        className="mb-5 max-w-lg text-sm leading-relaxed text-about-text sm:text-[15px]"
       >
         {aboutContent.bio}
       </motion.p>
+
+      {/* Email */}
+      <motion.a
+        variants={itemVariants}
+        href={`mailto:${aboutContent.email}`}
+        className="group mb-6 inline-flex items-center gap-3 rounded-lg border border-about-border bg-about-card-bg px-5 py-3 transition-colors duration-200 hover:border-about-timeline-dot"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          className="h-4 w-4 shrink-0 text-about-muted transition-colors duration-200 group-hover:text-about-title"
+          aria-hidden="true"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0-8.953 5.468a1.5 1.5 0 0 1-1.594 0L2.25 6.75"
+          />
+        </svg>
+        <span className="text-sm text-about-text transition-colors duration-200 group-hover:text-about-title">
+          {aboutContent.email}
+        </span>
+      </motion.a>
 
       {/* Education card */}
       <motion.div
