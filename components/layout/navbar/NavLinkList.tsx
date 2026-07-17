@@ -1,5 +1,7 @@
 // components/layout/navbar/NavLinkList.tsx
 
+"use client";
+
 import Link from "next/link";
 
 import { cn } from "@/lib/classNames";
@@ -17,7 +19,9 @@ type NavLinkListProps = {
 
 /**
  * Renders a list of navigation links.
- * Handles both internal (Next.js Link) and external links automatically.
+ * Hash links (#section) use smooth scrollTo for reliable smooth scrolling.
+ * External links open in new tab.
+ * Other internal links use Next.js Link.
  */
 export default function NavLinkList({
   links,
@@ -25,6 +29,19 @@ export default function NavLinkList({
   linkClassName,
   onLinkClick,
 }: NavLinkListProps) {
+  function handleAnchorClick(
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    onLinkClick?.();
+  }
+
   return (
     <nav aria-label="Navigation">
       <ul className={cn(className)}>
@@ -36,6 +53,14 @@ export default function NavLinkList({
                 target="_blank"
                 rel="noreferrer noopener"
                 onClick={onLinkClick}
+                className={cn(linkClassName)}
+              >
+                {link.label}
+              </a>
+            ) : link.href.startsWith("#") ? (
+              <a
+                href={link.href}
+                onClick={(e) => handleAnchorClick(e, link.href)}
                 className={cn(linkClassName)}
               >
                 {link.label}

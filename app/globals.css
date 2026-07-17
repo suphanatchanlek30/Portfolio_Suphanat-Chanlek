@@ -2,6 +2,11 @@
 
 @import "tailwindcss";
 
+/* Smooth scroll for anchor navigation */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Custom variant: landscape tablet/desktop (min-width: 1024px AND landscape orientation) */
 @custom-variant landscape-lg (@media (min-width: 1024px) and (orientation: landscape));
 
