@@ -66,6 +66,13 @@ html {
   --about-timeline-dot: rgba(255, 255, 255, 0.3);
   --about-tag-bg: rgba(255, 255, 255, 0.06);
   --about-tag-text: rgba(255, 255, 255, 0.5);
+
+  /* Footer colors */
+  --footer-bg: #000000;
+  --footer-border: rgba(255, 255, 255, 0.08);
+  --footer-text: rgba(255, 255, 255, 0.5);
+  --footer-text-hover: #ffffff;
+  --footer-heading: rgba(255, 255, 255, 0.7);
 }
 
 @theme inline {
@@ -113,6 +120,11 @@ html {
   --color-about-timeline-dot: var(--about-timeline-dot);
   --color-about-tag-bg: var(--about-tag-bg);
   --color-about-tag-text: var(--about-tag-text);
+  --color-footer-bg: var(--footer-bg);
+  --color-footer-border: var(--footer-border);
+  --color-footer-text: var(--footer-text);
+  --color-footer-text-hover: var(--footer-text-hover);
+  --color-footer-heading: var(--footer-heading);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
