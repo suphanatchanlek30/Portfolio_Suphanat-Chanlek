@@ -7,6 +7,7 @@ export const primaryNavigationLinks: NavigationLink[] = [
   { label: "Home", href: "#home" },
   { label: "What I do", href: "#what-i-do" },
   { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
   { label: "Portfolio", href: "#portfolio" },
 ];
 
@@ -15,6 +16,7 @@ export const drawerNavigationLinks: NavigationLink[] = [
   { label: "Home", href: "#home" },
   { label: "What I do", href: "#what-i-do" },
   { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
   { label: "Portfolio", href: "#portfolio" },
 ];
 
