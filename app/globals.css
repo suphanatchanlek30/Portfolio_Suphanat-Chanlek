@@ -36,6 +36,19 @@
   --hero-btn-hover-bg: rgba(255, 255, 255, 0.9);
   --hero-gradient-start: #0a0a0a;
   --hero-gradient-end: #000000;
+
+  /* Services section colors */
+  --services-title: #ffffff;
+  --services-subtitle: rgba(255, 255, 255, 0.5);
+  --services-card-bg: rgba(255, 255, 255, 0.02);
+  --services-card-border: rgba(255, 255, 255, 0.08);
+  --services-card-border-hover: rgba(255, 255, 255, 0.2);
+  --services-card-title: #ffffff;
+  --services-card-desc: rgba(255, 255, 255, 0.6);
+  --services-card-icon: rgba(255, 255, 255, 0.15);
+  --services-card-glow: rgba(255, 255, 255, 0.03);
+  --services-tag-bg: rgba(255, 255, 255, 0.06);
+  --services-tag-text: rgba(255, 255, 255, 0.5);
 }
 
 @theme inline {
@@ -62,6 +75,17 @@
   --color-hero-btn-hover-bg: var(--hero-btn-hover-bg);
   --color-hero-gradient-start: var(--hero-gradient-start);
   --color-hero-gradient-end: var(--hero-gradient-end);
+  --color-services-title: var(--services-title);
+  --color-services-subtitle: var(--services-subtitle);
+  --color-services-card-bg: var(--services-card-bg);
+  --color-services-card-border: var(--services-card-border);
+  --color-services-card-border-hover: var(--services-card-border-hover);
+  --color-services-card-title: var(--services-card-title);
+  --color-services-card-desc: var(--services-card-desc);
+  --color-services-card-icon: var(--services-card-icon);
+  --color-services-card-glow: var(--services-card-glow);
+  --color-services-tag-bg: var(--services-tag-bg);
+  --color-services-tag-text: var(--services-tag-text);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
