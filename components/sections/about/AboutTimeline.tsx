@@ -1,3 +1,5 @@
+// components/sections/about/AboutTimeline.tsx
+
 "use client";
 
 import { motion } from "framer-motion";

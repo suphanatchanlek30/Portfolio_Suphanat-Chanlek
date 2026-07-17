@@ -1,3 +1,5 @@
+// components/sections/about/AboutHeader.tsx
+
 "use client";
 
 import { motion } from "framer-motion";
