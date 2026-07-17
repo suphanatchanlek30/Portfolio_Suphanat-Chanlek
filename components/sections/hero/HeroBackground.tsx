@@ -1,37 +1,127 @@
-// components/sections/hero/HeroBackground.tsx
+"use client";
+
+import { motion } from "framer-motion";
 
 /**
- * Decorative grid background for the hero section.
- * Renders subtle grid lines and corner circle ornaments.
- * Fully responsive — grid scales with viewport.
+ * Animated dashed grid line definition.
+ * Each line is revealed via an expanding clip rect,
+ * keeping the dashed appearance throughout the animation.
+ */
+type GridLine = {
+  id: string;
+  x1: string;
+  y1: string;
+  x2: string;
+  y2: string;
+  delay: number;
+  direction: "vertical" | "horizontal";
+};
+
+/** Vertical lines — reveal from top to bottom */
+const verticalLines: GridLine[] = [
+  { id: "v1", x1: "15%", y1: "0%", x2: "15%", y2: "100%", delay: 0.1, direction: "vertical" },
+  { id: "v2", x1: "50%", y1: "0%", x2: "50%", y2: "100%", delay: 0.4, direction: "vertical" },
+  { id: "v3", x1: "85%", y1: "0%", x2: "85%", y2: "100%", delay: 0.25, direction: "vertical" },
+];
+
+/** Horizontal lines — reveal from left to right */
+const horizontalLines: GridLine[] = [
+  { id: "h1", x1: "0%", y1: "20%", x2: "100%", y2: "20%", delay: 0.5, direction: "horizontal" },
+  { id: "h2", x1: "0%", y1: "50%", x2: "100%", y2: "50%", delay: 0.7, direction: "horizontal" },
+  { id: "h3", x1: "0%", y1: "80%", x2: "100%", y2: "80%", delay: 0.6, direction: "horizontal" },
+];
+
+const allLines = [...verticalLines, ...horizontalLines];
+
+/**
+ * Decorative animated grid background for the hero section.
+ * Starts completely blank — dashed lines are smoothly revealed
+ * via animated clip-paths, maintaining the dashed appearance
+ * throughout the entire animation.
+ * Lines stay visible after animation completes.
  */
 export default function HeroBackground() {
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div
+      className="pointer-events-none absolute inset-0 overflow-hidden"
+      aria-hidden="true"
+    >
       {/* Radial gradient overlay — subtle vignette */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_var(--hero-gradient-end)_70%)]" />
 
-      {/* Vertical grid lines */}
-      <div className="absolute inset-0 flex justify-between px-[10%] sm:px-[12%] md:px-[15%]">
-        <div className="h-full w-px bg-hero-grid-line" />
-        <div className="hidden h-full w-px bg-hero-grid-line sm:block" />
-        <div className="h-full w-px bg-hero-grid-line" />
-      </div>
-
-      {/* Horizontal grid lines */}
-      <div className="absolute inset-0 flex flex-col justify-between py-[15%] sm:py-[12%]">
-        <div className="h-px w-full bg-hero-grid-line" />
-        <div className="hidden h-px w-full bg-hero-grid-line md:block" />
-        <div className="h-px w-full bg-hero-grid-line" />
-      </div>
-
-      {/* Top-left decorative circle — hidden on very small screens */}
+      {/* Animated grid SVG */}
       <svg
-        className="absolute top-[15%] left-[10%] hidden -translate-x-1/2 -translate-y-1/2 sm:block sm:left-[12%] md:left-[15%] md:top-[12%]"
+        className="absolute inset-0 h-full w-full"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+      >
+        <defs>
+          {/* Each line gets its own animated clipPath */}
+          {allLines.map((line) => (
+            <clipPath key={`clip-${line.id}`} id={`clip-${line.id}`}>
+              {line.direction === "vertical" ? (
+                <motion.rect
+                  x="0%"
+                  y="0%"
+                  width="100%"
+                  height="0%"
+                  initial={{ height: "0%" }}
+                  animate={{ height: "100%" }}
+                  transition={{
+                    duration: 2.2,
+                    delay: line.delay,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                />
+              ) : (
+                <motion.rect
+                  x="0%"
+                  y="0%"
+                  width="0%"
+                  height="100%"
+                  initial={{ width: "0%" }}
+                  animate={{ width: "100%" }}
+                  transition={{
+                    duration: 2.8,
+                    delay: line.delay,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                />
+              )}
+            </clipPath>
+          ))}
+        </defs>
+
+        {/* Render dashed lines with clip-path reveal */}
+        {allLines.map((line) => (
+          <line
+            key={line.id}
+            x1={line.x1}
+            y1={line.y1}
+            x2={line.x2}
+            y2={line.y2}
+            stroke="var(--hero-grid-line)"
+            strokeWidth="1"
+            strokeDasharray="3 4"
+            clipPath={`url(#clip-${line.id})`}
+          />
+        ))}
+      </svg>
+
+      {/* Top-left decorative circle — fades in after lines finish */}
+      <motion.svg
+        className="absolute top-[20%] left-[15%] hidden -translate-x-1/2 -translate-y-1/2 sm:block"
         width="60"
         height="60"
         viewBox="0 0 70 70"
         fill="none"
+        initial={{ opacity: 0, scale: 0.6 }}
+        animate={{ opacity: 0.6, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 2.5,
+          ease: [0.22, 1, 0.36, 1],
+        }}
       >
         <circle
           cx="35"
@@ -40,17 +130,23 @@ export default function HeroBackground() {
           stroke="var(--hero-grid-dot)"
           strokeWidth="1"
           strokeDasharray="3 3"
-          opacity="0.6"
         />
-      </svg>
+      </motion.svg>
 
       {/* Bottom-right decorative circle */}
-      <svg
-        className="absolute right-[10%] bottom-[15%] hidden translate-x-1/2 translate-y-1/2 sm:block sm:right-[12%] md:right-[15%] md:bottom-[12%]"
+      <motion.svg
+        className="absolute right-[15%] bottom-[20%] hidden translate-x-1/2 translate-y-1/2 sm:block"
         width="60"
         height="60"
         viewBox="0 0 70 70"
         fill="none"
+        initial={{ opacity: 0, scale: 0.6 }}
+        animate={{ opacity: 0.6, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 2.8,
+          ease: [0.22, 1, 0.36, 1],
+        }}
       >
         <circle
           cx="35"
@@ -59,13 +155,30 @@ export default function HeroBackground() {
           stroke="var(--hero-grid-dot)"
           strokeWidth="1"
           strokeDasharray="3 3"
-          opacity="0.6"
         />
-      </svg>
+      </motion.svg>
 
-      {/* Corner dots */}
-      <div className="absolute top-[15%] right-[10%] h-1.5 w-1.5 rounded-full bg-hero-grid-dot sm:right-[12%] md:top-[12%] md:right-[15%]" />
-      <div className="absolute bottom-[15%] left-[10%] h-1.5 w-1.5 rounded-full bg-hero-grid-dot sm:left-[12%] md:bottom-[12%] md:left-[15%]" />
+      {/* Corner dots — appear after lines reach their endpoints */}
+      <motion.div
+        className="absolute top-[20%] right-[15%] h-1.5 w-1.5 rounded-full bg-hero-grid-dot"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.4,
+          delay: 3,
+          ease: "easeOut",
+        }}
+      />
+      <motion.div
+        className="absolute bottom-[20%] left-[15%] h-1.5 w-1.5 rounded-full bg-hero-grid-dot"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.4,
+          delay: 3.2,
+          ease: "easeOut",
+        }}
+      />
     </div>
   );
 }
