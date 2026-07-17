@@ -49,6 +49,18 @@
   --services-card-glow: rgba(255, 255, 255, 0.03);
   --services-tag-bg: rgba(255, 255, 255, 0.06);
   --services-tag-text: rgba(255, 255, 255, 0.5);
+
+  /* About section colors */
+  --about-title: #ffffff;
+  --about-subtitle: rgba(255, 255, 255, 0.5);
+  --about-text: rgba(255, 255, 255, 0.7);
+  --about-muted: rgba(255, 255, 255, 0.4);
+  --about-border: rgba(255, 255, 255, 0.08);
+  --about-card-bg: rgba(255, 255, 255, 0.02);
+  --about-timeline-line: rgba(255, 255, 255, 0.06);
+  --about-timeline-dot: rgba(255, 255, 255, 0.3);
+  --about-tag-bg: rgba(255, 255, 255, 0.06);
+  --about-tag-text: rgba(255, 255, 255, 0.5);
 }
 
 @theme inline {
@@ -86,6 +98,16 @@
   --color-services-card-glow: var(--services-card-glow);
   --color-services-tag-bg: var(--services-tag-bg);
   --color-services-tag-text: var(--services-tag-text);
+  --color-about-title: var(--about-title);
+  --color-about-subtitle: var(--about-subtitle);
+  --color-about-text: var(--about-text);
+  --color-about-muted: var(--about-muted);
+  --color-about-border: var(--about-border);
+  --color-about-card-bg: var(--about-card-bg);
+  --color-about-timeline-line: var(--about-timeline-line);
+  --color-about-timeline-dot: var(--about-timeline-dot);
+  --color-about-tag-bg: var(--about-tag-bg);
+  --color-about-tag-text: var(--about-tag-text);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
