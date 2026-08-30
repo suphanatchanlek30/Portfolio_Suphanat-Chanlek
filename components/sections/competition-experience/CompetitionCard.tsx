@@ -60,7 +60,7 @@ export default function CompetitionCard({
         }
         onLoad={() => setLoaded(true)}
         className={cn(
-          "object-cover transition-[transform,opacity] duration-500 ease-out group-hover:scale-110",
+          "will-change-transform object-cover transition-[transform,opacity] duration-500 ease-out group-hover:scale-105",
           loaded ? "opacity-100" : "opacity-0",
         )}
       />
