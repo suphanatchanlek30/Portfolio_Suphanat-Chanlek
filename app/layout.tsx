@@ -22,7 +22,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Suphanat Chanlek — Software Engineer",
+    default: "Suphanat Chanlek - Software Engineer",
     template: "%s | Suphanat Chanlek",
   },
   description:
