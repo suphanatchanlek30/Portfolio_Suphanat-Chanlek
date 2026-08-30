@@ -41,7 +41,7 @@ export default function AboutHeader({ className }: AboutHeaderProps) {
       </motion.span>
       <motion.h2
         variants={itemVariants}
-        className="text-3xl font-semibold tracking-tight text-about-title sm:text-4xl md:text-5xl lg:text-[56px] lg:leading-none"
+        className="text-3xl font-semibold tracking-tight text-about-title sm:text-4xl md:text-5xl lg:text-[48px] lg:leading-tight"
       >
         {aboutContent.sectionTitle}
       </motion.h2>

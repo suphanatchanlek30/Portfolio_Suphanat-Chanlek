@@ -78,6 +78,31 @@ html {
   --skills-badge-border-end: #726969;
   --skills-glow: rgba(255, 255, 255, 0.8);
 
+  /* Competition Experience (Portfolio) section colors */
+  --competition-title: #ffffff;
+  --competition-subtitle: rgba(255, 255, 255, 0.5);
+  --competition-card-border: rgba(255, 255, 255, 0.08);
+  --competition-card-border-hover: rgba(255, 255, 255, 0.28);
+  --competition-card-overlay-from: rgba(0, 0, 0, 0.9);
+  --competition-card-overlay-to: rgba(0, 0, 0, 0);
+  --competition-card-title: #ffffff;
+  --competition-card-meta: rgba(255, 255, 255, 0.55);
+  --competition-card-icon-bg: rgba(255, 255, 255, 0.12);
+  --competition-card-icon-text: #ffffff;
+  --competition-tag-bg: rgba(255, 255, 255, 0.06);
+  --competition-tag-text: rgba(255, 255, 255, 0.6);
+  --competition-badge-bg: rgba(255, 255, 255, 0.08);
+  --competition-badge-text: rgba(255, 255, 255, 0.75);
+  --competition-modal-backdrop: rgba(0, 0, 0, 0.75);
+  --competition-modal-bg: #0a0a0a;
+  --competition-modal-border: rgba(255, 255, 255, 0.1);
+  --competition-modal-title: #ffffff;
+  --competition-modal-text: rgba(255, 255, 255, 0.65);
+  --competition-modal-label: rgba(255, 255, 255, 0.4);
+  --competition-modal-close-bg: rgba(255, 255, 255, 0.08);
+  --competition-modal-close-hover-bg: rgba(255, 255, 255, 0.18);
+  --competition-accent: #60a5fa;
+
   /* Footer colors */
   --footer-bg: #000000;
   --footer-border: rgba(255, 255, 255, 0.08);
@@ -140,6 +165,29 @@ html {
   --color-skills-badge-border-start: var(--skills-badge-border-start);
   --color-skills-badge-border-end: var(--skills-badge-border-end);
   --color-skills-glow: var(--skills-glow);
+  --color-competition-title: var(--competition-title);
+  --color-competition-subtitle: var(--competition-subtitle);
+  --color-competition-card-border: var(--competition-card-border);
+  --color-competition-card-border-hover: var(--competition-card-border-hover);
+  --color-competition-card-overlay-from: var(--competition-card-overlay-from);
+  --color-competition-card-overlay-to: var(--competition-card-overlay-to);
+  --color-competition-card-title: var(--competition-card-title);
+  --color-competition-card-meta: var(--competition-card-meta);
+  --color-competition-card-icon-bg: var(--competition-card-icon-bg);
+  --color-competition-card-icon-text: var(--competition-card-icon-text);
+  --color-competition-tag-bg: var(--competition-tag-bg);
+  --color-competition-tag-text: var(--competition-tag-text);
+  --color-competition-badge-bg: var(--competition-badge-bg);
+  --color-competition-badge-text: var(--competition-badge-text);
+  --color-competition-modal-backdrop: var(--competition-modal-backdrop);
+  --color-competition-modal-bg: var(--competition-modal-bg);
+  --color-competition-modal-border: var(--competition-modal-border);
+  --color-competition-modal-title: var(--competition-modal-title);
+  --color-competition-modal-text: var(--competition-modal-text);
+  --color-competition-modal-label: var(--competition-modal-label);
+  --color-competition-modal-close-bg: var(--competition-modal-close-bg);
+  --color-competition-modal-close-hover-bg: var(--competition-modal-close-hover-bg);
+  --color-competition-accent: var(--competition-accent);
   --color-footer-bg: var(--footer-bg);
   --color-footer-border: var(--footer-border);
   --color-footer-text: var(--footer-text);

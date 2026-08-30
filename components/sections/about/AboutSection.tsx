@@ -58,6 +58,7 @@ export default function AboutSection({ className }: AboutSectionProps) {
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 35vw, 0vw"
+                    quality={90}
                     priority
                   />
                   <div
@@ -84,6 +85,7 @@ export default function AboutSection({ className }: AboutSectionProps) {
                     fill
                     className="object-cover brightness-90"
                     sizes="(min-width: 1024px) 20vw, 0vw"
+                    quality={90}
                     loading="lazy"
                   />
                   <div
