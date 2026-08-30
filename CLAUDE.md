@@ -267,7 +267,7 @@ export default function My3DScene() {
 | Hero | ✅ Done | `#home` |
 | What I do | ❌ Not built | `#what-i-do` |
 | About | ❌ Not built | `#about` |
-| Portfolio | ❌ Not built | `#portfolio` |
+| Portfolio (Competition Experience) | ✅ Done | `#portfolio` |
 
 ---
 
