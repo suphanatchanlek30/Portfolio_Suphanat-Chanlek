@@ -36,7 +36,7 @@ export const socialLinks: SocialLink[] = [
   },
 ];
 
-/** All social links including Facebook & Instagram — used in Footer. */
+/** All social links including Facebook & Instagram - used in Footer. */
 export const allSocialLinks: SocialLink[] = [
   ...socialLinks,
   {

@@ -1,6 +1,6 @@
 // data/about.ts
 
-/** About section content — data only, no styling. */
+/** About section content - data only, no styling. */
 
 export type TimelineItem = {
   id: string;
@@ -19,7 +19,7 @@ export const aboutContent = {
   email: "suphanatchanlek@gmail.com",
   education: {
     degree: "Computer Science",
-    gpa: "3.42",
+    gpa: "3.31",
     period: "2024 – Present",
     university: "Thammasat University",
   },
@@ -27,23 +27,13 @@ export const aboutContent = {
 
 export const timelineItems: TimelineItem[] = [
   {
-    id: "connected-tech",
-    type: "experience",
-    title: "AI / MLOps Engineer (Intern)",
-    organization: "Connected Tech Co., Ltd.",
-    period: "Jul 2026 – Sep 2026",
-    description:
-      "Supporting AI engineering and MLOps workflows. Assisting in data processing, model development, inference pipeline design, and ML service integration with experiment tracking.",
-    logo: "/about/experience/connected-logo.png",
-  },
-  {
     id: "tcc-technology",
     type: "experience",
-    title: "Application Developer (Intern & Part-Time)",
+    title: "Application Developer (Internship & Part-Time)",
     organization: "T.C.C. Technology Co., Ltd.",
     period: "Jun 2026 – Present",
     description:
-      "Contributing to backend development for enterprise applications. Implementing APIs, business logic, and service integrations with Docker-based environments and Git workflows.",
+      "Building backend services for enterprise applications - designing APIs and business logic, and integrating services in Dockerized environments with solid Git workflows.",
     logo: "/about/experience/tcc_technology-logo.png",
   },
   {
@@ -53,17 +43,27 @@ export const timelineItems: TimelineItem[] = [
     organization: "Thammasat University – Lab Tonkit",
     period: "May 2025 – Present",
     description:
-      "Contributing to the PADIN Project (Osaka University × Thammasat). Built AI-powered dental X-ray diagnostic tools using SAM 2, processing ~2,000 images/month with federated learning research.",
+      "Contributing to the PADIN Project, a joint AI research collaboration with Osaka University - building AI-powered dental X-ray diagnostic tools with SAM 2, processing around 2,000 images a month as part of ongoing federated learning research.",
     logo: "/about/experience/tonkit-logo.png",
+  },
+  {
+    id: "connected-tech",
+    type: "experience",
+    title: "AI / MLOps Engineer (Internship)",
+    organization: "Connected Tech Co., Ltd.",
+    period: "Jul 2026 – Sep 2026",
+    description:
+      "Building AI engineering and MLOps workflows for AEGIS, a real-time PPE-compliance detection system - covering data processing, model development, inference pipeline design, and ML service integration with experiment tracking.",
+    logo: "/about/experience/connected-logo.png",
   },
   {
     id: "ascend",
     type: "experience",
-    title: "Frontend Developer (Intern)",
+    title: "Frontend Developer (Internship)",
     organization: "ASCEND Co., Ltd.",
     period: "Aug 2025 – Nov 2025",
     description:
-      "Developed responsive web interfaces with Next.js and Tailwind CSS for production systems. Translated Figma mockups into high-fidelity, production-ready code with backend integration.",
+      "Built responsive web interfaces with Next.js and Tailwind CSS for production systems, translating Figma mockups into high-fidelity, production-ready code with backend integration.",
     logo: "/about/experience/ascend-logo.png",
   },
 ] as const;
@@ -76,7 +76,7 @@ export const trainingItems: TimelineItem[] = [
     organization: "Artificial Intelligence Association of Thailand (AIAT)",
     period: "Mar 2026 – Present",
     description:
-      "Selected as one of 150 participants from over 10,457 candidates nationwide (top 1.5%). Completed Level 1: AI Fundamentals (ML, CV, NLP, LLMs, RAG). Passed Level 2: Intensive AI Camp with real-world industry problems. Currently in Level 3: AI Internship gaining hands-on experience.",
+      "Selected as 1 of 150 participants from 10,457+ applicants nationwide (top 1.5%) for this 3-level national AI training program. Completed Level 1 (AI Fundamentals), Level 2 (Intensive AI Camp), and Level 3 - an AI internship at Connected Tech Co., Ltd. building AEGIS, a real-time PPE-compliance detection system - and was awarded a Silver Medal.",
     logo: "/about/experience/aiat-logo.png",
   },
 ] as const;
