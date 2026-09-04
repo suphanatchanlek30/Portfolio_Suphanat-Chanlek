@@ -10,6 +10,15 @@ html {
 /* Custom variant: landscape tablet/desktop (min-width: 1024px AND landscape orientation) */
 @custom-variant landscape-lg (@media (min-width: 1024px) and (orientation: landscape));
 
+/* Hides the scrollbar on horizontally-scrollable carousels while keeping them scrollable */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 :root {
   /* Base colors */
   --background: #000000;
@@ -77,6 +86,33 @@ html {
   --skills-badge-border-start: #ffffff;
   --skills-badge-border-end: #726969;
   --skills-glow: rgba(255, 255, 255, 0.8);
+
+  /* Projects section colors */
+  --projects-title: #ffffff;
+  --projects-subtitle: rgba(255, 255, 255, 0.5);
+  --projects-card-bg: #0a0a0a;
+  --projects-card-border: rgba(255, 255, 255, 0.08);
+  --projects-card-border-hover: rgba(255, 255, 255, 0.28);
+  --projects-card-title: #ffffff;
+  --projects-card-desc: rgba(255, 255, 255, 0.55);
+  --projects-card-cta-bg: rgba(255, 255, 255, 0.08);
+  --projects-card-cta-text: #ffffff;
+  --projects-tag-bg: rgba(255, 255, 255, 0.06);
+  --projects-tag-text: rgba(255, 255, 255, 0.6);
+  --projects-arrow-bg: rgba(255, 255, 255, 0.06);
+  --projects-arrow-bg-hover: rgba(255, 255, 255, 0.14);
+  --projects-arrow-text: #ffffff;
+  --projects-arrow-disabled: rgba(255, 255, 255, 0.2);
+  --projects-edge-fade: var(--background);
+  --projects-modal-backdrop: rgba(0, 0, 0, 0.75);
+  --projects-modal-bg: #0a0a0a;
+  --projects-modal-border: rgba(255, 255, 255, 0.1);
+  --projects-modal-title: #ffffff;
+  --projects-modal-text: rgba(255, 255, 255, 0.65);
+  --projects-modal-label: rgba(255, 255, 255, 0.4);
+  --projects-modal-close-bg: rgba(255, 255, 255, 0.08);
+  --projects-modal-close-hover-bg: rgba(255, 255, 255, 0.18);
+  --projects-accent: #60a5fa;
 
   /* Competition Experience (Portfolio) section colors */
   --competition-title: #ffffff;
@@ -165,6 +201,31 @@ html {
   --color-skills-badge-border-start: var(--skills-badge-border-start);
   --color-skills-badge-border-end: var(--skills-badge-border-end);
   --color-skills-glow: var(--skills-glow);
+  --color-projects-title: var(--projects-title);
+  --color-projects-subtitle: var(--projects-subtitle);
+  --color-projects-card-bg: var(--projects-card-bg);
+  --color-projects-card-border: var(--projects-card-border);
+  --color-projects-card-border-hover: var(--projects-card-border-hover);
+  --color-projects-card-title: var(--projects-card-title);
+  --color-projects-card-desc: var(--projects-card-desc);
+  --color-projects-card-cta-bg: var(--projects-card-cta-bg);
+  --color-projects-card-cta-text: var(--projects-card-cta-text);
+  --color-projects-tag-bg: var(--projects-tag-bg);
+  --color-projects-tag-text: var(--projects-tag-text);
+  --color-projects-arrow-bg: var(--projects-arrow-bg);
+  --color-projects-arrow-bg-hover: var(--projects-arrow-bg-hover);
+  --color-projects-arrow-text: var(--projects-arrow-text);
+  --color-projects-arrow-disabled: var(--projects-arrow-disabled);
+  --color-projects-edge-fade: var(--projects-edge-fade);
+  --color-projects-modal-backdrop: var(--projects-modal-backdrop);
+  --color-projects-modal-bg: var(--projects-modal-bg);
+  --color-projects-modal-border: var(--projects-modal-border);
+  --color-projects-modal-title: var(--projects-modal-title);
+  --color-projects-modal-text: var(--projects-modal-text);
+  --color-projects-modal-label: var(--projects-modal-label);
+  --color-projects-modal-close-bg: var(--projects-modal-close-bg);
+  --color-projects-modal-close-hover-bg: var(--projects-modal-close-hover-bg);
+  --color-projects-accent: var(--projects-accent);
   --color-competition-title: var(--competition-title);
   --color-competition-subtitle: var(--competition-subtitle);
   --color-competition-card-border: var(--competition-card-border);

@@ -1,6 +1,6 @@
 // data/services.ts
 
-/** Service card content — data only, no styling. */
+/** Service card content - data only, no styling. */
 export type ServiceData = {
   id: string;
   title: string;
@@ -30,7 +30,7 @@ export const services: ServiceData[] = [
     subtitle: "Cloud & Infrastructure",
     description:
       "Design and automate cloud-native infrastructure with CI/CD pipelines, containerization, and Infrastructure as Code. Ship faster with zero-downtime deployments, observability, and auto-scaling across multi-cloud environments.",
-    tags: ["Docker", "Kubernetes", "AWS", "Terraform", "GitHub Actions", "ArgoCD", "Prometheus", "Grafana", "Helm", "CI/CD", "Jenkins", "Linux"],
+    tags: ["Docker", "Kubernetes", "AWS", "Terraform", "GitHub Actions", "Grafana", "Helm", "CI/CD", "Jenkins", "Linux"],
   },
   {
     id: "ai-ml-engineering",
