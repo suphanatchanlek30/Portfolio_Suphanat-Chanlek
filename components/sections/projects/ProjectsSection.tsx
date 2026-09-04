@@ -26,11 +26,11 @@ export default function ProjectsSection({ className }: ProjectsSectionProps) {
     <section
       id="projects"
       className={cn(
-        "relative w-full overflow-hidden bg-background py-12 sm:py-16 md:py-32",
+        "relative w-full overflow-hidden bg-background px-6 py-12 sm:px-8 sm:py-16 md:px-16 md:py-32 lg:px-20",
         className,
       )}
     >
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 md:px-16 lg:px-20">
+      <div className="mx-auto max-w-7xl">
         <ProjectsHeader className="mb-12 md:mb-14" />
         <ProjectCarousel onOpen={setSelected} />
       </div>

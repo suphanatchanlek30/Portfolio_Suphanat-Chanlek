@@ -1,5 +1,5 @@
 /**
- * Skills section content — data only, no styling.
+ * Skills section content - data only, no styling.
  * Each row contains skills that scroll in a specific direction.
  * Icons use react-icons identifiers.
  */
@@ -21,7 +21,7 @@ export const skillsSectionContent = {
 } as const;
 
 export const skillRows: SkillRow[] = [
-  // Row 1: Frontend + Backend — scroll right
+  // Row 1: Frontend + Backend - scroll right
   {
     direction: "right",
     duration: 50,
@@ -42,7 +42,7 @@ export const skillRows: SkillRow[] = [
       { name: "Python", icon: "fa/FaPython" },
     ],
   },
-  // Row 2: DevOps, Cloud & Databases — scroll left
+  // Row 2: DevOps, Cloud & Databases - scroll left
   {
     direction: "left",
     duration: 55,
@@ -67,7 +67,7 @@ export const skillRows: SkillRow[] = [
       { name: "MSSQL Server", icon: "fa/FaDatabase" },
     ],
   },
-  // Row 3: ML/AI + Tools — scroll right
+  // Row 3: ML/AI + Tools - scroll right
   {
     direction: "right",
     duration: 50,

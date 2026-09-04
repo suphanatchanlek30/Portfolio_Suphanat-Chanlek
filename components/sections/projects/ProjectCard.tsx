@@ -17,7 +17,8 @@ type ProjectCardProps = {
 const VISIBLE_TAGS = 3;
 
 /**
- * Fixed-width carousel card — image on top, content below.
+ * Carousel card — image on top, content below. Sizing (width) is controlled
+ * by the wrapping element in ProjectCarousel; this component just fills it.
  * Whole card is a button that opens the detail modal.
  */
 export default function ProjectCard({ item, onOpen, priority = false }: ProjectCardProps) {
@@ -29,7 +30,7 @@ export default function ProjectCard({ item, onOpen, priority = false }: ProjectC
       type="button"
       onClick={() => onOpen(item)}
       aria-haspopup="dialog"
-      className="group flex h-full w-[280px] shrink-0 flex-col overflow-hidden rounded-xl border border-projects-card-border bg-projects-card-bg text-left transition-colors duration-300 ease-out hover:border-projects-card-border-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-projects-card-border-hover sm:w-[320px] lg:w-[360px]"
+      className="group flex h-full w-full flex-col overflow-hidden rounded-xl border border-projects-card-border bg-projects-card-bg text-left transition-colors duration-300 ease-out hover:border-projects-card-border-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-projects-card-border-hover"
     >
       {/* Image */}
       <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden">
@@ -37,16 +38,22 @@ export default function ProjectCard({ item, onOpen, priority = false }: ProjectC
           src={item.image}
           alt={item.title}
           fill
+          draggable={false}
           priority={priority}
           loading={priority ? "eager" : "lazy"}
           fetchPriority={priority ? "high" : "auto"}
           quality={80}
-          sizes="(min-width: 1024px) 360px, (min-width: 640px) 320px, 280px"
+          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 42vw, (min-width: 640px) 60vw, 82vw"
           onLoad={() => setLoaded(true)}
           className={cn(
             "will-change-transform object-cover transition-[transform,opacity] duration-500 ease-out group-hover:scale-105",
             loaded ? "opacity-100" : "opacity-0",
           )}
+        />
+        {/* Soft blend into the card's content area — avoids a hard seam where a light screenshot meets the dark card body */}
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-projects-card-bg to-transparent"
+          aria-hidden="true"
         />
       </div>
 

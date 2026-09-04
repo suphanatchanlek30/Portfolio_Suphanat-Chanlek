@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | Suphanat Chanlek",
   },
   description:
-    "Portfolio of Suphanat Chanlek (ศุภณัฐ จันทร์เลข / Arm) — Computer Science student specializing in full-stack development, AI/MLOps, and DevOps. Building scalable, production-ready systems.",
+    "Portfolio of Suphanat Chanlek (ศุภณัฐ จันทร์เลข / Arm) - Computer Science student specializing in full-stack development, AI/MLOps, and DevOps. Building scalable, production-ready systems.",
   keywords: [
     "Suphanat Chanlek",
     "suphanatchanlek",
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Suphanat Chanlek Portfolio",
-    title: "Suphanat Chanlek (ศุภณัฐ จันทร์เลข) — Software Engineer",
+    title: "Suphanat Chanlek (ศุภณัฐ จันทร์เลข) - Software Engineer",
     description:
-      "Portfolio of Arm (Suphanat Chanlek / ศุภณัฐ จันทร์เลข) — Full-stack developer, AI/MLOps, and DevOps engineer.",
+      "Portfolio of Arm (Suphanat Chanlek / ศุภณัฐ จันทร์เลข) - Full-stack developer, AI/MLOps, and DevOps engineer.",
   },
   robots: {
     index: true,

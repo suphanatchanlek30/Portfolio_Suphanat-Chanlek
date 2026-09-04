@@ -1,6 +1,6 @@
 // data/footer.ts
 
-/** Footer content — data only, no styling. */
+/** Footer content - data only, no styling. */
 
 export const footerContent = {
   brand: "Suphanat",
