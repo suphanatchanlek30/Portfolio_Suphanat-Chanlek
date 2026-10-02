@@ -55,6 +55,16 @@ export const projectItems: ProjectItem[] = [
     techStack: ["Next.js", "Tailwind CSS"],
   },
   {
+    id: "doh-bim-dashboard",
+    title: "DOH BIM Dashboard",
+    tagline: "Track construction progress in 3D, floor by floor.",
+    description:
+      "A web platform for viewing 3D building models (BIM/IFC) and tracking construction progress floor by floor. The 3D viewer and responsive UI offer floor isolation, measurement, section cuts, element search, and clash reporting, with model elements color-coded by work status. The NestJS backend converts uploaded IFC files, stores them on MinIO (S3), and imports/exports CSV, Excel, and MS Project files. Organized as a monorepo with shared types between frontend and backend, deployed with Docker Compose, and backed by automated tests plus improvements to page load speed and accessibility.",
+    image: "/projects/DOH Dashboard.png",
+    techStack: ["React", "NestJS", "TypeScript", "Tailwind CSS", "PostgreSQL", "MinIO"],
+    role: "Built the 3D viewer and responsive UI, plus the backend API for IFC conversion, file storage, and data import/export.",
+  },
+  {
     id: "federated-learning-dashboard",
     title: "Federated Learning Dashboard",
     tagline: "Research visualization for the PADIN Project.",
