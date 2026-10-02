@@ -74,7 +74,7 @@ export const trainingItems: TimelineItem[] = [
     type: "training",
     title: "Super AI Engineer Season 6",
     organization: "Artificial Intelligence Association of Thailand (AIAT)",
-    period: "Mar 2026 – Present",
+    period: "Mar 2026 – Sep 2026",
     description:
       "Selected as 1 of 150 participants from 10,457+ applicants nationwide (top 1.5%) for this 3-level national AI training program. Completed Level 1 (AI Fundamentals), Level 2 (Intensive AI Camp), and Level 3 - an AI internship at Connected Tech Co., Ltd. building AEGIS, a real-time PPE-compliance detection system - and was awarded a Silver Medal.",
     logo: "/about/experience/aiat-logo.png",
