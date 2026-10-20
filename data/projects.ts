@@ -55,6 +55,15 @@ export const projectItems: ProjectItem[] = [
     techStack: ["Next.js", "Tailwind CSS"],
   },
   {
+    id: "k-sure",
+    title: "K Sure",
+    tagline: "KBTG Kampus Hackathon 2026 - safer rental deposits.",
+    description:
+      "K Sure is a prototype built for KBTG Kampus Hackathon 2026 (Intern Edition, Software Engineering & Quality track) to fight rental-deposit scams. Instead of transferring a booking fee and deposit upfront, the tenant holds the money in their own account and releases it step by step: the booking fee after viewing the room, the deposit after moving in. Unreleased funds are refunded automatically if the deal expires or is cancelled, and the tenant is warned before transferring money outside the deal. Landlords create a deal and share a QR code, then follow its status in real time. Under the hood, a server-side state machine checks role, status, ownership, and version on every transition, with idempotent requests, optimistic concurrency, and a simulated ledger. All 14 screens are covered by Playwright E2E and visual regression tests against the Figma designs, and the demo is deployed with Terraform on AWS EC2 and Vercel. All money and identity data is simulated.",
+    image: "/projects/K-Sure.png",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Go (Fiber)", "PostgreSQL", "Playwright", "Docker", "Terraform", "AWS EC2", "Vercel"],
+  },
+  {
     id: "doh-bim-dashboard",
     title: "DOH BIM Dashboard",
     tagline: "Track construction progress in 3D, floor by floor.",
