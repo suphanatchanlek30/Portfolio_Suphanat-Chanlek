@@ -8,6 +8,6 @@ export const heroContent = {
     "Third-year Computer Science student passionate about building scalable systems and intelligent applications. Experienced in full-stack development, AI/MLOps, and DevOps - Seeking an internship to contribute to production-ready, cloud-native solutions.",
   cta: {
     label: "Download CV",
-    href: "/cv_resume/CV_SuphanatChanlek_For_Software Engineer.pdf",
+    href: "/cv_resume/Suphanat Chanlek_CV.pdf",
   },
 } as const;
